@@ -50,4 +50,8 @@ SB_RGBA_DRV RGB_DRIVER (
 --> here this .RGBLEDEN(1'b1) this enables the RGB LED driver and power the led if it is kept high(1) in its respective port
 
 
+defparam RGB_DRIVER.RGB0_CURRENT = "0b000001";
+defparam RGB_DRIVER.RGB1_CURRENT = "0b000001";
+defparam RGB_DRIVER.RGB2_CURRENT = "0b000001";
 
+-->Sets the brightness of each LED and 0b000001 represents a low current setting, making the LED dim
