@@ -1,46 +1,80 @@
-# ***Documentation of Task 1**  
+**Verilog Module Documentation: RGB LED Controller**  
 
----
+> ### **Functionality of the Code**
+Implements a basic `RGB LED control system` using an internal oscillator and counter logic. Manages LED output states and provides a test signal for monitoring internal operations. 
 
-> ### **Module Purpose**
+> ### **Module Top purpose**:
+```verilog
+module top (  
+  // outputs  
+  output wire led_red  , // Red  
+  output wire led_blue , // Blue  
+  output wire led_green , // Green  
+  input wire hw_clk,  // Hardware Oscillator, not the internal oscillator  
+  output wire testwire  
+);
+```
+This module declares the output ports ,where the `hw_clock` is the external oscillator input
 
-Controls an RGB LED using a hardware oscillator and internal counter logic. Provides static color output and a test signal for debugging.
 
----
+> ### **Internal Logic**: 
+```verilog
+wire int_osc;  
+reg [27:0] frequency_counter_i;  
 
-> ### **Internal Logic & Oscillator**
-1. #### **Internal Oscillator**:  
-   - Uses `SB_HFOSC` primitive (Lattice Semiconductor-specific) to generate a high-frequency clock (`int_osc`).  
-   - Configured with a divider (`0b10`) to reduce the oscillator frequency.  
+assign testwire = frequency_counter_i[5];
+always @(posedge int_osc) begin  
+  frequency_counter_i <= frequency_counter_i + 1'b1;  
+end
+``` 
++ **28-bit Counter**:  
+  + Increments continuously on the rising edge of an internal oscillator signal `int_osc`.  
+  + Bit 5 of the counter drives `testwire`, generating a periodic signal for external observation.  
 
-2. #### **Counter Logic**:  
-   - A 28-bit counter (`frequency_counter_i`) increments on every rising edge of `int_osc`.  
-   - Bit 5 of the counter drives `testwire`, creating a lower-frequency test signal (observable externally).  
+> ### **Internal Oscillator**:  
+```verilog
+SB_HFOSC #(.CLKHF_DIV ("0b10")) u_SB_HFOSC (   
+  .CLKHFPU(1'b1),   
+  .CLKHFEN(1'b1),   
+  .CLKHF(int_osc)  
+);  
+```
++ Uses the `SB_HFOSC` primitive (Lattice FPGA-specific) to generate a clock signal `int_osc`.  
++ `.CLKHFPU(1'b1)` this powers up the oscillator,`.CLKHFEN(1'b1)` this enables the oscillator and `.CLKHF(int_osc)` this Connects the oscillator output to `int_osc`
 
----
 
-> ### **RGB LED Driver**
-1. #### **Primitive Instantiation**  
-   - Uses `SB_RGBA_DRV` (Lattice RGB driver primitive) to interface with the RGB LED hardware.  
-   - **PWM Control**:  
-     - `RGB0PWM` (red) is enabled (`1'b1`), while `RGB1PWM` (green) and `RGB2PWM` (blue) are disabled (`1'b0`).  
-     - **Result**: Only the red LED is active in this configuration.  
+>### **RGB LED Driver**:  
+```verilog
+SB_RGBA_DRV RGB_DRIVER (  
+  .RGBLEDEN(1'b1),  
+  .RGB0PWM (1'b0), // red  
+  .RGB1PWM (1'b0), // green  
+  .RGB2PWM (1'b1), // blue  
+  .CURREN  (1'b1),  
+  .RGB0    (led_red),   
+  .RGB1    (led_green),  
+  .RGB2    (led_blue)  
+);  
+```
++ **Primitive Instantiation**:  
+  + Utilizes `SB_RGBA_DRV` (Lattice hardware primitive) to interface with the RGB LED.  
+  + **PWM Control**:  
+    + Three PWM inputs `RGB0PWM`, `RGB1PWM`, `RGB2PWM` depends upon the the enable/disable state of each LED color channel.  
+    + LED outputs (`led_red`, `led_green`, `led_blue`) map directly to these PWM signals.  
++ **Current Settings**: 
+```verilog
+defparam RGB_DRIVER.RGB0_CURRENT = "0b000001";  
+defparam RGB_DRIVER.RGB1_CURRENT = "0b000001";  
+defparam RGB_DRIVER.RGB2_CURRENT = "0b000001";  
+``` 
+  +  Drive strength for each color channel is configured to a minimal level (`0b000001`), controlling LED brightness.  
 
-2. #### **Current Configuration** 
-   - `RGB0_CURRENT`, `RGB1_CURRENT`, `RGB2_CURRENT` set to `0b000001` (minimum drive strength for all colors).  
-   - **Output Mapping**:  
-     - `RGB0` → `led_red` (hardware connection for red LED).  
-     - `RGB1` → `led_green`, `RGB2` → `led_blue` (disabled in this design).  
 
----
+>### **Key Features**:  
++ **Static LED Control**: LED states are determined by fixed PWM configurations (set in hardware).  
++ **Test Signal**: The counter’s 6th bit `testwire` provides a observable signal for debugging or timing analysis.  
++ **FPGA-Specific Components**: Relies on Lattice Semiconductor primitives `SB_HFOSC`, `SB_RGBA_DRV` for clock generation and LED driving.  
 
-> ### **Key Relationships**:  
-- `hw_clk` (external clock) is unused; the design relies on the internal oscillator (`int_osc`).  
-- The counter (`frequency_counter_i`) drives `testwire` but does not affect LED behavior (LEDs are statically configured).  
-- LED outputs are directly tied to the RGB driver’s PWM enable signals, with only `led_red` active.  
 
----
-
-> ### **Summary**:  
-
-This module demonstrates a basic `RGB LED control` system using an `internal oscillator` and static PWM settings. The red LED remains constantly lit, while `testwire` provides a debug signal derived from a counter clocked by the oscillator. The design can be extended to enable dynamic color changes by modifying the PWM signals and counter logic.
+>### **Summary**:  
+This module demonstrates a `RGB LED control` architecture,Where The internal oscillator drives a counter, enabling a test signal output, while the ` RGB driver` statically configures LED behavior based on predefined PWM settings. The design can be adapted for dynamic LED effects by modifying the counter logic and PWM inputs.
