@@ -3,7 +3,7 @@
 > ## **Step 1: Understanding the Verilog Code**:
 + In this step 1 we'll understand and implement the basic `RGB LED control system` and we learn its functionality and work flow of RGB driver.  
 + Where we will have internal oscillator and counter logic which Manages LED output states and provides a test signal for monitoring internal operations.  
-+You can view the [code implementation](Task_1_Files/Code_implementation.md) (review module declaration) and its [documentation](https://github.com/sribalaji-16/VSD_FPGA/blob/main/Task_1_Files/Understanding%20the%20Verilog%20Code.md) (Purpose,analyse,description,etc) of further information.
++ You can view the [code implementation](Task_1_Files/Code_implementation.md) (review module declaration) and its [documentation](https://github.com/sribalaji-16/VSD_FPGA/blob/main/Task_1_Files/Understanding%20the%20Verilog%20Code.md) (Purpose,analyse,description,etc) of further information.
  
 > ## **Step 2: Creating the PCF File**:
 + In this step 2 we'll Creating the PCF File for the led control system where we'll discuss about the Pin Mapping Configuration and its Design specific  
