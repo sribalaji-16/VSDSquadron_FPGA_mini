@@ -37,7 +37,7 @@
 
 >## Reviewing Datasheet and Project Files
 
-* **Datasheet**: Review to understand pin functions, power requirements, and FTDI setup. View the datasheet pdf by clicking upon [Datasheet]()
+* **Datasheet**: Review to understand pin functions, power requirements, and FTDI setup. View the datasheet pdf by clicking upon [Datasheet](https://github.com/sribalaji-16/VSD_FPGA/blob/main/Task_1_Files/iCE40%20UltraPlus%20Family%20Data%20Sheet.pdf)
 * **PCF File**: Maps Verilog signals to physical pins. Example:
 
   ```pcf
