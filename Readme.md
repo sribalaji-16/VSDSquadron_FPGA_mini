@@ -17,3 +17,6 @@
 + In this step I have documented Compile all observations, explanations, and steps into a comprehensive report.  
 + You can view the [documentation](https://github.com/sribalaji-16/VSD_FPGA/blob/main/Task_1_Files/Final%20Documentation%20Report.md) (Pin mapping,integration steps,etc) for further information.  
 
+# **Task -2**
+
+> ## **Step 1:Study the Existing code**
