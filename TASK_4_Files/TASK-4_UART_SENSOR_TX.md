@@ -98,16 +98,20 @@ These define the finite state machine (FSM) states for tracking transmission pro
 ---
 
 ## Block Diagram  
-*(Not included in text)*
+
 
 ---
 
 ## Circuit Diagram  
-*(Not included in text)*
+
 
 ---
 
 ## FPGA Implementation and Verification
+
+### Dump the code
+
+![image](https://github.com/user-attachments/assets/2a9bbe7b-4872-4e6b-9171-bc8670fc1c1c)
 
 - Create the `top.v`, `uart_trx.v`, `Makefile`, and `VSDSquadronFM.pcf` files in a directory and execute the previous steps for FPGA implementation.  
 - The FPGA board includes a built-in USB-UART bridge so it will automatically appear as a COM port on a PC.  
@@ -123,3 +127,5 @@ To verify the UART communication, PuTTY need to be installed which is a free and
 ---
 
 ## Final Output
+
+https://github.com/user-attachments/assets/9c89d250-ce6c-4d8f-9feb-673cd97d7a97
