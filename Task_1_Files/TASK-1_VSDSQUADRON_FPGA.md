@@ -7,10 +7,10 @@ To understand and document the provided Verilog code for LED blinking, create th
 
 ## 1. Understanding the Verilog Code
 
-The Verilog implementation is available in the GitHub repository at LINK. This repository includes various projects designed for the VSDSquadron_FM board, leveraging open-source FPGA tools for development. It showcases how to drive RGB LEDs using an internal oscillator and a counter-based approach to generate the required control signals.
+The Verilog implementation is available in the GitHub repository as [blink_led](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/tree/main/Task_1_Files/blink_led). This repository includes various projects designed for the VSDSquadron_FM board, leveraging open-source FPGA tools for development. It showcases how to drive RGB LEDs using an internal oscillator and a counter-based approach to generate the required control signals.
 
 ### Purpose of the Module:
-The top module is designed to control an RGB LED using an internal high-frequency oscillator (SB_HFOSC). It features:
+The [top](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_1_Files/blink_led/rgb_blink.v) module is designed as blinkrgb led where we can use this module also to control an RGB LED using an internal high-frequency oscillator (SB_HFOSC). It features:
 
 - A frequency counter driven by the internal oscillator.
 - A test signal output based on the frequency counter.
@@ -53,7 +53,7 @@ The module generates an internal clock using `SB_HFOSC`. A 28-bit counter increm
 ## 2. Creating the PCF File
 
 ### Pin Mapping and Functionality
-To ensure proper functionality, the pin assignments specified in the PCF (Physical Constraints File) must be verified against the VSDSquadron FPGA Mini board datasheet. Below is an analysis of the assigned pins and their roles in the design.
+To ensure proper functionality, the pin assignments specified in the [PCF](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_1_Files/blink_led/VSDSquadronFM.pcf) (Physical Constraints File) must be verified against the VSDSquadron FPGA Mini board [datasheet](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_1_Files/iCE40%20UltraPlus%20Family%20Data%20Sheet.pdf). Below is an analysis of the assigned pins and their roles in the design.
 
 The following table summarizes the pin assignments:
 
@@ -102,7 +102,7 @@ sudo make flash  # To flash the code to the external SRAM.
 https://github.com/user-attachments/assets/c5ff85be-afb8-43f9-b23a-168fcd7199de
 
 
-The verilog file and pcf file required to blink the RGB led are RGB_blink.v & VSD_FM.pcf respectively.
+The verilog file and pcf file required to blink the RGB led are [RGB_blink.v](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_1_Files/blink_led/rgb_blink.v) & [VSD_FM.pcf](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_1_Files/blink_led/VSDSquadronFM.pcf) respectively.
 
 Summary of the above verilog file:
 The module uses an internal oscillator (SB_HFOSC) to generate a clock signal.
