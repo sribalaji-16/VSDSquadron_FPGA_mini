@@ -99,7 +99,7 @@ sudo make flash  # To flash the code to the external SRAM.
 ![image](https://github.com/user-attachments/assets/237764d1-5697-49b5-bd7e-a75d7eb0f303)
 
 
-https://github.com/user-attachments/assets/0a4a0606-89b7-4591-8bb1-c68253306bb2
+https://github.com/user-attachments/assets/c5ff85be-afb8-43f9-b23a-168fcd7199de
 
 
 The verilog file and pcf file required to blink the RGB led are RGB_blink.v & VSD_FM.pcf respectively.
