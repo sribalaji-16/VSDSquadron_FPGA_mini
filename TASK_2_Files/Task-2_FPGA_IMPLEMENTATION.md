@@ -114,6 +114,8 @@ The module is designed for serial communication and visual indication using an L
 
 ## 📊 Block Diagram (Conceptual Description)
 
+![image](https://github.com/user-attachments/assets/e5588541-66fb-4d15-8840-78822ab4f549)
+
 - **Clock Signal**: An internal oscillator generates the system clock to drive the baud rate generator.
 - **UART Tx & Rx**: UART Transmitter sends serial data via TX. In loopback, TX is connected directly to RX.
 - **UART Receiver**: Converts serial data back to parallel. This is processed further.
@@ -135,6 +137,9 @@ The module is designed for serial communication and visual indication using an L
 - Use a **serial terminal** (e.g., `minicom`) to test loopback.
 
 ---
+## Dump the code 
+
+![image](https://github.com/user-attachments/assets/8ef38444-9c54-420e-b109-79f81a9a0d13)
 
 ## 🧪 Steps to Test the UART Loopback in Minicom
 
@@ -144,15 +149,31 @@ The module is designed for serial communication and visual indication using an L
 sudo apt-get install minicom 
 ```
 
+
 2. Changing configuration settings
 ```bash
 sudo minicom -s
 ```
+![image](https://github.com/user-attachments/assets/e2dd0f7e-cbf9-4ca1-b597-2baebd34b42d)
+
 3. In 'serial port setup' set 'Serial Device' as /dev/ttyUSB0 and save dfl.
+
+![image](https://github.com/user-attachments/assets/99ac9195-eaeb-4e24-bf97-e5eaa162d5c8)
 
 4. Press ctrl+A then Z for help on special keys
 
+![image](https://github.com/user-attachments/assets/e809c7d6-01bc-4f1b-950f-d5408fe9ac74)
+
 5. Press 'Enter' then ctrl+A and then press key E to enable echo. If the UART loopback is successful then the typed input will be displayed twice on the screen.
 
+![image](https://github.com/user-attachments/assets/f17f3d5b-ce2d-4566-b149-1435fa6be954)
+
 ## Output
+
+![image](https://github.com/user-attachments/assets/ccdef9e5-3ba2-4232-bc28-fcfd0a58e7ff)
+
+
+
+https://github.com/user-attachments/assets/a364106b-d857-4f0d-a3b9-f77cba626dc8
+
 
