@@ -74,7 +74,8 @@ The transmission process follows these steps:
 ---
 
 ## 🧱 Block Diagram and Circuit Diagram  
-*Diagram placeholder*
+
+
 
 ---
 
@@ -105,6 +106,10 @@ The transmission process follows these steps:
 
 ## 🔧 Installation & Setup of PuTTY
 
+### Dump the code
+
+![image](https://github.com/user-attachments/assets/0d02a748-235c-409b-b6b2-c2becb3b48f5)
+
 ### 📦 Installation
 - Download the appropriate MSI (Windows Installer) package based on system architecture.
 - Install PuTTY and launch the application.
@@ -120,6 +125,6 @@ Before running PuTTY, the FPGA must be **physically connected** to the computer 
 
 ## ✅ Final Output
 
-
+https://github.com/user-attachments/assets/369a9f83-4852-4682-9b83-1c6f2cbf3e66
 
 If everything is set up correctly, the character `'D'` should **continuously appear in PuTTY**, confirming **successful transmission**.
