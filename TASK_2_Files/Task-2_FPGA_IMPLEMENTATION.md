@@ -114,7 +114,8 @@ The module is designed for serial communication and visual indication using an L
 
 ## 📊 Block Diagram (Conceptual Description)
 
-![image](https://github.com/user-attachments/assets/e5588541-66fb-4d15-8840-78822ab4f549)
+![Blockdiagram2](https://github.com/user-attachments/assets/b76e173c-a199-49f0-b25d-9e0723aa0119)
+
 
 - **Clock Signal**: An internal oscillator generates the system clock to drive the baud rate generator.
 - **UART Tx & Rx**: UART Transmitter sends serial data via TX. In loopback, TX is connected directly to RX.
