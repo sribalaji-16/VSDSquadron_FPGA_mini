@@ -9,7 +9,7 @@ To understand and document the provided Verilog code for LED blinking, create th
 
 The Verilog implementation is available in the GitHub repository as [blink_led](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/tree/main/Task_1_Files/blink_led). This repository includes various projects designed for the VSDSquadron_FM board, leveraging open-source FPGA tools for development. It showcases how to drive RGB LEDs using an internal oscillator and a counter-based approach to generate the required control signals.
 
-### Purpose of the Module:
+### Purpose of the Module:          
 The [top](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_1_Files/blink_led/rgb_blink.v) module is designed as blinkrgb led where we can use this module also to control an RGB LED using an internal high-frequency oscillator (SB_HFOSC). It features:
 
 - A frequency counter driven by the internal oscillator.
