@@ -7,7 +7,7 @@ Implement a UART loopback mechanism where transmitted data is immediately receiv
 
 ## 🧩 UART Transmitter Module (8N1)
 
-This document explains the **8N1 UART Transmitter Module** written in Verilog. The module is designed to transmit serial data in an **8 data bits, No parity, 1 stop bit (8N1)** format. It follows a **state machine approach** to control data transmission over a UART-compatible serial interface.
+This document explains the [**8N1 UART Transmitter Module**](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_2_Files/uart_loopback/uart_trx.v) written in Verilog. The [module](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_2_Files/uart_loopback/top.v) is designed to transmit serial data in an **8 data bits, No parity, 1 stop bit (8N1)** format. It follows a **state machine approach** to control data transmission over a UART-compatible serial interface.
 
 ### 🔍 Explanation of the 8N1 UART Tx Verilog Code:
 
@@ -59,7 +59,7 @@ The transmission process follows a **4-state FSM**:
 
 ## 🧱 UART Top-Level Module
 
-This document explains the **top-level UART module** implemented in Verilog. It includes:
+This document explains the **top-level UART module** implemented in [Verilog](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_2_Files/uart_loopback/uart_trx.v). It includes:
 
 - External UART transmitter/receiver module (`uart_trx.v`)
 - Internal oscillator
@@ -126,7 +126,7 @@ The module is designed for serial communication and visual indication using an L
 
 ## 🛠️ FPGA Implementation of UART Loopback
 
-- Create files: `top.v`, `uart_trx.v`, `Makefile`, and `VSDSquadron_FM.pcf`.  
+- Create files: [`top.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_2_Files/uart_loopback/top.v), [`uart_trx.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_2_Files/uart_loopback/uart_trx.v), [`Makefile`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_2_Files/uart_loopback/Makefile), and [`VSDSquadron_FM.pcf`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_2_Files/uart_loopback/VSDSquadronFM.pcf).  
 - Execute previous steps for FPGA implementation.
 
 ### No External Wiring Needed:
