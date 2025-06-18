@@ -7,7 +7,8 @@ Implement a UART transmitter that sends data based on sensor inputs, enabling th
 ---
 
 ## Overview  
-This document explains the Verilog implementation of a UART (Universal Asynchronous Receiver Transmitter) Transmitter module with the 8N1 configuration `uart_trx.v`. This is a transmit-only module, meaning it sends serial data over a single `tx` line. The module includes logic for:
+The top module code , pcf file and other file are in this [link](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/tree/main/TASK_4_Files/uart_tx_sense).  
+This document explains the Verilog implementation of a UART (Universal Asynchronous Receiver Transmitter) Transmitter module with the 8N1 configuration [`uart_trx.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_4_Files/uart_tx_sense/uart_trx.v). This is a transmit-only module, meaning it sends serial data over a single `tx` line. The module includes logic for:
 
 - Start bit generation  
 - 8-bit data transmission (LSB first)  
@@ -99,10 +100,15 @@ These define the finite state machine (FSM) states for tracking transmission pro
 
 ## Block Diagram  
 
+![Blockdiagram4](https://github.com/user-attachments/assets/8d5186df-a1a4-4a4b-8929-fb15676df220)
+
 
 ---
 
 ## Circuit Diagram  
+
+
+![circuit diagram 2](https://github.com/user-attachments/assets/f0c5e3ee-1008-4341-a9ec-e4a1730ba605)
 
 
 ---
@@ -113,7 +119,7 @@ These define the finite state machine (FSM) states for tracking transmission pro
 
 ![image](https://github.com/user-attachments/assets/2a9bbe7b-4872-4e6b-9171-bc8670fc1c1c)
 
-- Create the `top.v`, `uart_trx.v`, `Makefile`, and `VSDSquadronFM.pcf` files in a directory and execute the previous steps for FPGA implementation.  
+- Create the [`top.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_4_Files/uart_tx_sense/top.v), [`uart_trx.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_4_Files/uart_tx_sense/uart_trx.v), [`Makefile`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_4_Files/uart_tx_sense/Makefile), and [`VSDSquadronFM.pcf`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_4_Files/uart_tx_sense/VSDSquadronFM.pcf) files in a directory and execute the previous steps for FPGA implementation.  
 - The FPGA board includes a built-in USB-UART bridge so it will automatically appear as a COM port on a PC.  
 - The TX data can be monitored using a serial terminal like PuTTY.  
 - This task demonstrates how to establish communication between an FPGA and a computer using a USB-C cable via the UART protocol.  
