@@ -1,5 +1,5 @@
-# Task6: BCD to 7-segment Display Converter
-
+https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/Top%206.v# Task6: BCD to 7-segment Display Converter
+The code file were linked in this [link](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/tree/main/Task_5%266_Code_Files) given.  
 ## What this project does
 
 A BCD to 7-segment converter, also known as a BCD to 7-segment decoder, is a circuit that converts a binary-coded decimal (BCD) input into a signal that can drive a 7-segment display. The 7-segment display is a common electronic display device used to show decimal digits. This project is used to implement Verilog code in the VSDSquadronFM to display the decimal digits in the 7-segment-display.
@@ -18,27 +18,23 @@ A BCD to 7-segment converter, also known as a BCD to 7-segment decoder, is a cir
 
 ## Step 1: Analysis of the Existing Verilog Code
 
-This is the Verilog code for a BCD (Binary Coded Decimal) to 7 segment display converter.
+This is the Verilog code for a BCD (Binary Coded Decimal) to 7 segment display converter. [code top.v](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/Top%206.v)
 
 ### Verilog Code (`top.v`)
 
 ```verilog
-// This is the Verilog module for a BCD to seven segment display decoder.
-// This module takes a 4 bit BCD input and converts it to a 7 segment display output.
 module top(
     bcd,
     seg
 );
 
-// Declare inputs, outputs and internal variables.
 input [3:0] bcd;
 output [6:0] seg;
 reg [6:0] seg;
 
-// Always block for converting BCD digit into 7 segment format
 always @(bcd)
 begin
-    case (bcd) // case statement
+    case (bcd) 
         0 : seg = 7'b0000001;
         1 : seg = 7'b1001111;
         2 : seg = 7'b0010010;
@@ -49,7 +45,6 @@ begin
         7 : seg = 7'b0001111;
         8 : seg = 7'b0000000;
         9 : seg = 7'b0000100;
-        // Switch off 7 segment character when the BCD digit is not a decimal number.
         default : seg = 7'b1111111; 
     endcase
 end
@@ -146,13 +141,18 @@ This is the PCF file for the project. There are 4 input pins (`bcd[0]`, `bcd[1]`
 ## Step 3: Block and Circuit Diagrams
 
 - **Block diagram**
+
+![Blockdiagram6](https://github.com/user-attachments/assets/1de52bc8-56fa-4e34-8bfa-8b64e47f9421)
+
 - **Circuit diagram**
+
+![circuit diagram 4](https://github.com/user-attachments/assets/e141f65c-521e-4782-bb66-1e6171d8ded4)
 
 (*Add appropriate images or descriptions for these diagrams if needed.*)
 
 ## Step 4: Implementing in the VSDSquadronFM
 
-Make sure you have copied the following files: `top.v`, `Makefile`, and the `PCF` file. Place all these in the folder created inside the `VSDSquadron_FM` directory named `7_segement`.
+Make sure you have copied the following files: [`top.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/Top%206.v), [`Makefile`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/Makefile%206.txt), and the [`PCF`]() file. Place all these in the folder created inside the `VSDSquadron_FM` directory named [`7_segement`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/Top%206.v).
 
 ### To implement the code on FM, follow these steps:
 
@@ -193,3 +193,5 @@ Connect the GPIO pins to the input pins of the 7-segment display as follows:
 | g                            | 26         |
 
 You can place four DIP switches or four pushbuttons on the input side to control the decimal digits presented on the 7-segment display. If you are getting the decimal numbers, you have successfully completed this project.
+![image](https://github.com/user-attachments/assets/81ba4a98-76c6-49e4-9c61-977543ea395f)
+
