@@ -1,4 +1,4 @@
-https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/Top%206.v# Task6: BCD to 7-segment Display Converter
+# Task6: BCD to 7-segment Display Converter
 The code file were linked in this [link](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/tree/main/Task_5%266_Code_Files) given.  
 ## What this project does
 
