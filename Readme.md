@@ -16,6 +16,8 @@ The iCE40 UltraPlus family architecture contains an array of Programmable Logic 
 
 The VSDSquadron FPGA Mini (FM) board features the Lattice ICE40UP5K FPGA with the following capabilities:
 
+![Blockdiagram1](https://github.com/user-attachments/assets/adfdf761-374a-461b-8051-586612d992c7)
+
 - 48-lead QFN package
 - 5.3K LUTs for flexible logic design
 - 1Mb SPRAM and 120Kb DPRAM for efficient memory usage
