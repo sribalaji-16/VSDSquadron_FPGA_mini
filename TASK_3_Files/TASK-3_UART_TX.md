@@ -6,14 +6,15 @@ Develop a UART transmitter module capable of sending serial data from the FPGA t
 
 ---
 
-## 🧾 Introduction  
+## 🧾 Introduction 
+The top module code , pcf file and other file are in this [link](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/tree/main/TASK_3_Files/uart_tx).  
 The **8N1 UART Transmitter Module** is a Verilog-based design that implements a simple Universal Asynchronous Receiver Transmitter (UART) transmitter with:
 
 - 8-bit data frame  
 - No parity  
 - 1 stop bit (8N1)  
 
-This module is responsible for **transmitting a byte of data serially** through a `tx` (transmit) wire, following the standard UART protocol. Below is the detailed description of the UART transmission module (`uart_tx.v`) in Verilog HDL.
+This [module](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_3_Files/uart_tx/uart_trx.v) is responsible for **transmitting a byte of data serially** through a `tx` (transmit) wire, following the standard UART protocol. Below is the detailed description of the UART transmission module ([`uart_tx.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_3_Files/uart_tx/uart_trx.v)) in Verilog HDL.
 
 ---
 
@@ -75,17 +76,19 @@ The transmission process follows these steps:
 
 ## 🧱 Block Diagram and Circuit Diagram  
 
+![Blockdiagram3](https://github.com/user-attachments/assets/755eb982-588b-43b2-a54e-397796d49a93)
 
+![circuit diagram](https://github.com/user-attachments/assets/fcfefb6c-9e3b-46ac-b488-644403e5187d)
 
 ---
 
 ## 🛠️ FPGA Implementation and Verification of UART Tx
 
 1. Create the following files in a directory:
-   - `top.v`  
-   - `uart_tx.v`  
-   - `Makefile`  
-   - `VSDSquadronFM.pcf`  
+   - [`top.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_3_Files/uart_tx/top.v)  
+   - [`uart_tx.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_3_Files/uart_tx/uart_trx.v)  
+   - [`Makefile`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_3_Files/uart_tx/Makefile)
+   - [`VSDSquadronFM.pcf`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/TASK_3_Files/uart_tx/VSDSquadronFM.pcf)  
 
 2. Execute the previous steps for **FPGA implementation**.
 
