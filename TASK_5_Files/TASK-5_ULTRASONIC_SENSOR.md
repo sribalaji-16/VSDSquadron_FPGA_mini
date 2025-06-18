@@ -1,6 +1,8 @@
 
 # Task 5: Real-Time Sensor Data Acquisition and Transmission System
 
+The code file were linked in this [link](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/tree/main/Task_5%266_Code_Files) given.   
+
 ## What this project does
 This theme interfaces with the sensors to receive the data sensed, and sends this data to the FPGA. Then with the GPIO pins, it transmits the output results to an external device (example: buzzer). In this project, we will make a touchless bell using the VSDSquadronFM board and with a sensor named HC-SR04 ultrasonic sensor.
 
@@ -16,7 +18,7 @@ This theme interfaces with the sensors to receive the data sensed, and sends thi
 - Docklight
 
 ## Step 1: Analysis of the Existing Verilog Code
-The existing Verilog code can be accessed here. The top module integrates an ultrasonic sensor to measure distance, transmits the measured distance over UART, and controls RGB LEDs based on the distance.
+The existing Verilog code can be accessed [here](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/top%205%20.v). The top module integrates an ultrasonic sensor to measure distance, transmits the measured distance over UART, and controls RGB LEDs based on the distance.
 
 ### Module Declaration
 The module has several input and output ports:
@@ -55,7 +57,7 @@ Implements an FSM to convert the distance measurement (`distance_cm`) into ASCII
 The FSM ensures that the distance is converted to ASCII and sent over UART, and the LEDs provide a visual indication of proximity.
 
 ## Analysis of the Ultrasonic Sensor Module (`ultra_sonic_sensor.v`)
-The Verilog code for the HC-SR04 module can be accessed here.
+The Verilog code for the HC-SR04 module can be accessed [here](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/ulta_sonic_sensor.v).
 
 ### Module Declaration
 **Inputs:**
@@ -99,7 +101,7 @@ _Alt text_
 _Alt text_
 
 ## Step 3: Implementation on the FM Board
-Make sure you have copied the following files: `top.v`, `ultra_sonic_sensor.v`, `uart_trx.v`, `Makefile`, and `VSDSquadronFM.pcf`. Place them all in a directory named `touchless_bell` inside the `VSDSquadron_FM` folder.
+Make sure you have copied the following files: [`top.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/top%205%20.v), [`ultra_sonic_sensor.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/ulta_sonic_sensor.v), [`uart_trx.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/ulta_sonic_sensor.v), [`Makefile`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/Makefile%205.txt), and [`VSDSquadronFM.pcf`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/VSDSquadronFM%205.pcf). Place them all in a directory named [`touchless_Switch`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/ulta_sonic_sensor.v) inside the `VSDSquadron_FM` folder.
 
 ### To implement the code on FM, follow these steps:
 1. Go to Ubuntu software and open the terminal. Ensure the FM is connected by typing `lsusb`.
@@ -117,13 +119,17 @@ Follow the steps to test using Docklight:
 - Test with objects: Place an object above the sensor. The buzzer will beep when the object is within a field of 5 cm.
 
 ## Step 5: Final Documentation
-The project has three Verilog files including `top.v`. This module integrates sensor data acquisition, signal processing, and communication for an FPGA-based system. The Verilog file `ultra_sound_sensor.v` sets up the HC-SR04 sensor to measure distance and trigger a buzzer if the distance is below a specified threshold.
+The project has three Verilog files including [`top.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/top%205%20.v). This module integrates sensor data acquisition, signal processing, and communication for an FPGA-based system. The Verilog file [`ultra_sound_sensor.v`](https://github.com/sribalaji-16/VSDSquadron_FPGA_mini/blob/main/Task_5%266_Code_Files/ulta_sonic_sensor.v) sets up the HC-SR04 sensor to measure distance and trigger a buzzer if the distance is below a specified threshold.
 
 ### Ultrasonic Sensor Pin Connections
-_Alt text_
 
+![Blockdiagram5](https://github.com/user-attachments/assets/ee45d613-7ad4-4b70-887f-cb72d307e8e4)
+
+ 
 ### Internal Processing Diagram
-_Alt text_
+
+![circuit diagram 3](https://github.com/user-attachments/assets/1f56546d-d685-4f3b-86b2-2d88dd6099cd)
+
 
 ### Run the following steps to implement the codes:
 1. Open the terminal in Ubuntu and ensure FM is connected with `lsusb`.
