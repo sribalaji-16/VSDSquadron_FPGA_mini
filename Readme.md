@@ -3,7 +3,7 @@
 
 The VSDSquadron FPGA Mini (FM) board is an affordable, compact tool for prototyping and embedded system development. With powerful ICE40UP5K FPGA, onboard programming, versatile GPIO access, SPI flash, and integrated power regulation, it enables efficient design, testing, and deployment, making it ideal for developers, hobbyists, and educators exploring FPGA applications.
 
-![image](https://github.com/user-attachments/assets/140ba49a-fd99-4472-a3ea-70a47c3483b4)
+![image](https://github.com/user-attachments/assets/ae8e7a0b-ef4d-4b00-932d-e335220666ad)
 
 ## Architecture Diagram
 
